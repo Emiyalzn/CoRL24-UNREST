@@ -1,0 +1,20 @@
+# experiment config
+ckpt_return: checkpoints/return95
+ckpt_value: checkpoints/value95
+data_path: data/data_mini.npz
+save_path: data/
+device: 0
+
+# dataset config
+subsampled_sequence_length: 10
+step: 1
+discount: 0.95
+max_path_length: 5000
+timeouts: false
+
+# kl measurement config
+max_window: 8
+
+# segmentation config
+min_length: 10
+threshold: 3.  

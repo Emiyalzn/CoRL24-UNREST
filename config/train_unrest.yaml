@@ -1,0 +1,52 @@
+# experiment config
+exp_name: longshort-train
+seed: 42
+log_level: INFO
+device: 0
+log_freq: 100
+save_freq: 10
+
+# dataset config
+dataset_path: data/data_mini.npz
+subsampled_sequence_length: 10
+step: 1
+termination_penalty: null
+discount: 1.
+horizon: 100
+anystep: true
+max_path_length: 5000
+indice_path: ''
+certain_only: false
+uncertain_only: false
+
+# model config
+ckpt: ''
+epoch: latest
+n_layer: 4
+n_head: 8
+n_embd: 16
+embd_pdrop: 0.1
+resid_pdrop: 0.1
+attn_pdrop: 0.1
+## for longshortgpt
+mode: Fixed
+embd_time: false
+global_conditioned: true
+n_global_condition_return_token: 50
+### for autolongshortgpt
+global_predicted: true
+n_global_predict_return_token: 100
+n_horizon_predict_return_token: 100
+
+# training config
+action_tanh: true
+batch_size: 256
+learning_rate: 0.0001
+lr_decay: false
+n_epochs_ref: 50
+resume: true
+## for autolongshortgpt
+horizon_return_weight: 1.
+global_return_weight: 1.
+action_weight: 5.
+

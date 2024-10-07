@@ -1,0 +1,40 @@
+# experiment config
+exp_name: return-train
+seed: 42
+log_level: INFO
+device: 0
+log_freq: 100
+save_freq: 10
+
+# dataset config
+dataset_path: data/data_mini.npz
+subsampled_sequence_length: 10
+step: 1
+termination_penalty: null
+discount: 1.
+anystep: false
+
+# model config
+ckpt: ''
+epoch: latest
+n_layer: 4
+n_head: 8
+n_embd: 16
+embd_pdrop: 0.1
+resid_pdrop: 0.1
+attn_pdrop: 0.1
+use_value: false
+use_new_s: false
+
+# training config
+batch_size: 256
+learning_rate: 0.0001
+lr_decay: false
+n_epochs_ref: 50
+resume: true
+horizon: 0
+
+# ensemble config
+ensemble_size: 5
+mask_prob: 0.6
+
